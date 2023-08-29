@@ -3,6 +3,7 @@ class LinksController < ApplicationController
   def index
     @links = Link.all
     @link = Link.new
+    @browser = Browser.new(request.env["HTTP_USER_AGENT"])
   end
 
   def create
