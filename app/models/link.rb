@@ -1,4 +1,5 @@
 class Link < ApplicationRecord
+    has_many :clicks
     validates_uniqueness_of :short_url
     validates_presence_of :original_url, :short_url
     validate :original_url_format
