@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "links#index"
   
-  resources :links
+  resources :links do
+    resources :clicks do
+    end
+  end
 
   get '/:short_url' => 'links#show'
 
