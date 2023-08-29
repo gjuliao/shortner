@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '*unmatched_route', to: redirect('/404.html'), format: false
+
   get '/:short_url' => 'links#show'
 
 end
