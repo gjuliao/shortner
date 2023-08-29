@@ -7,7 +7,7 @@ class Link < ApplicationRecord
     def original_url_format
         uri = URI.parse(original_url || '')
         if uri.host.nil?
-            errors.add(:original_url, 'Invalid url')
+            errors.add(:invalid_URL, 'Please use a valid URL')
         end
     end
 

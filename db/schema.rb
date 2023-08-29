@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_201121) do
   create_table "links", force: :cascade do |t|
     t.string "original_url"
     t.string "short_url"
-    t.integer "click_count"
+    t.integer "click_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
