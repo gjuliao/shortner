@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get '/:short_url' => 'links#show'
 
+  get 'clicks_per_day_data', to: 'clicks#clicks_per_day_data'
+
 end

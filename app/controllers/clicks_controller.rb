@@ -18,6 +18,12 @@ class ClicksController < ApplicationController
         end
     end
 
+    def clicks_per_day_data
+        clicks_per_day = Click.group("DATE(created_at)").count
+        data = [['Date', 'Clicks']] + clicks_per_day.map { |date, count| [date.to_s, count] }
+        render json: data
+      end
+
     private
 
     def click_params

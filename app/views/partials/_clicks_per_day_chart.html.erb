@@ -1,0 +1,24 @@
+<!-- _clicks_per_day_chart.html.erb -->
+<div id="clicks_per_day_chart" style="width: 100%; height: 300px;"></div>
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawClicksPerDayChart);
+
+  function drawClicksPerDayChart() {
+    // Fetch data and format it (e.g., from your backend)
+    var data = google.visualization.arrayToDataTable([
+      ['Date', 'Clicks'],
+      ['2023-08-29', 3],
+      ['2023-08-30', 5],
+      // ... more data ...
+    ]);
+
+    var options = {
+      title: 'Total Clicks per Day this Month',
+      // ... other chart options ...
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('clicks_per_day_chart'));
+    chart.draw(data, options);
+  }
+</script>
