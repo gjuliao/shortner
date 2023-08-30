@@ -1,5 +1,10 @@
 class LinksController < ApplicationController
 
+  def show
+    link = Link.find_by(short_url: params[:short_url])
+    redirect_to link.original_url, allow_other_host: true
+  end
+
   def index
     @links = Link.all
     @link = Link.new
